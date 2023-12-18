@@ -8,9 +8,10 @@
     "build": "vite build && tsc --project tsconfig.build.json",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 8080",
     "preview-storybook": "npx http-server storybook-static",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
     "path": "^0.12.7",
@@ -26,6 +27,7 @@
     "@storybook/manager-api": "^7.4.0",
     "@storybook/react": "^7.4.0",
     "@storybook/react-vite": "^7.4.0",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/testing-library": "0.2.2",
     "@storybook/theming": "^7.4.0",
     "@types/less": "^3.0.4",
@@ -58,5 +60,10 @@
       "require": "./dist/index.umd.js"
     },
     "./style": "./dist/style.css"
+  },
+  "resolutions": {
+    "string-width": "^4",
+    "jackspeak": "^2",
+    "strip-ansi": "^6"
   }
 }
